@@ -6,12 +6,15 @@ public class Leak : MonoBehaviour
 {
     [SerializeField] GameObject topOfWater;
     [SerializeField] float waterBuffer = 0.1f;
+    public HealthBar healthBar;
     int repairsRemaining = 5;
 
     // Start is called before the first frame update
     void Awake()
     {
         topOfWater = GameObject.Find("TopOfWater");
+        healthBar = GetComponentInChildren<HealthBar>();
+        healthBar.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,6 +31,10 @@ public class Leak : MonoBehaviour
     {
         Debug.Log("Reparing, " + repairsRemaining + " repairs left");
         repairsRemaining -= 1;
+
+        healthBar.gameObject.SetActive(true);
+        healthBar.SetHealth(repairsRemaining);
+
         if (repairsRemaining <= 0)
         {
             PatchLeak();
