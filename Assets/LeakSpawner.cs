@@ -42,6 +42,8 @@ public class LeakSpawner : MonoBehaviour
 
             var newLeak = Instantiate(myLeak, leakSpawnPoints[selectedSpawnPoint].transform.position, Quaternion.identity);
             newLeak.transform.parent = gameObject.transform;
+
+            FindObjectOfType<CameraShake>().ShakeCamera(2f, 2f);
         }
 
         

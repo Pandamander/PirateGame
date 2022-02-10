@@ -25,18 +25,17 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-let you restart - DONE
-Figure out why the repair stopped working - DONE
-Send to coop - DONE
-
+Give you a score based on time surviving - DONE
+Make you able to swim in the water - dONE kind of
+Camera shake when a new hole appears - DONE
 
 NEXT UP:
 
 
-Give you a score
+
+
 Collect treasure
 Make it so that the same leak doesn't appear in the same spot
-Give the leaks health bars
 
 
 Make the ship bobbing still work while the ship is going down
@@ -48,7 +47,7 @@ Speed up character walking
 
 
 
-Camera shake when a new hole appears
+
 Make treasure that you can collect
 Make water that you can swim in that goes up and down
 Have you get stunned when you get hit, or when you die

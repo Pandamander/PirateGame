@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameEnding: MonoBehaviour
 {
+    [SerializeField] EndGame endGame;
+    [SerializeField] Text scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +19,6 @@ public class GameEnding: MonoBehaviour
     {
         Application.LoadLevel(Application.loadedLevel);
     }
+
+    
 }
