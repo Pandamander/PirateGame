@@ -36,7 +36,7 @@ public class LeakSpawner : MonoBehaviour
         int selectedSpawnPoint = Random.Range(0, leakSpawnPoints.Length);
         if (leakSpawnPoints[selectedSpawnPoint].transform.position.y > topOfWater.transform.position.y) // if it's above water, make the leak
         {
-            Debug.Log("Selected " + selectedSpawnPoint + " at " + leakSpawnPoints[selectedSpawnPoint].transform.position);
+            //Debug.Log("Selected " + selectedSpawnPoint + " at " + leakSpawnPoints[selectedSpawnPoint].transform.position);
 
             numberOfLeaks += 1;
 

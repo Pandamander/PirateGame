@@ -25,12 +25,11 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Give you a score based on time surviving - DONE
-Make you able to swim in the water - dONE kind of
-Camera shake when a new hole appears - DONE
+Throwing harpoons - DONE
 
 NEXT UP:
 
+Water simulation
 
 
 

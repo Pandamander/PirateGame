@@ -98,6 +98,9 @@ TextureImporter:
   - first:
       213: -2713908092488927214
     second: GhostShip_Characters_31
+  - first:
+      213: -3211015725797685188
+    second: GhostShip_Characters_32
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -866,6 +869,27 @@ TextureImporter:
       bones: []
       spriteID: 218b32208f2465ad0800000000000000
       internalID: -2713908092488927214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostShip_Characters_32
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38c2a7c53e2073d0800000000000000
+      internalID: -3211015725797685188
       vertices: []
       indices: 
       edges: []
