@@ -31,9 +31,30 @@ public class LeakSpawner : MonoBehaviour
 
     void SpawnLeak()
     {
-
-        // Make it so that it picks a random gameobject in LeakSpawnPOints tok place the spot
+        
         int selectedSpawnPoint = Random.Range(0, leakSpawnPoints.Length);
+
+        /*
+        bool foundValidSpawnPoint = false;
+        int loopBreaker = 0;
+        do
+        {
+            if (true)//spawnpoint is valid and spawnpoint is not occupied
+            {
+                //Make the spawn point, call spawn function on the spawn point
+                // Sets it to occpied
+                foundValidSpawnPoint = true;
+                loopBreaker += 1;
+            }
+            else
+            {
+                foundValidSpawnPoint = false;
+                loopBreaker += 1;
+            }
+        } while (foundValidSpawnPoint == false && loopBreaker < 20);
+        */
+
+
         if (leakSpawnPoints[selectedSpawnPoint].transform.position.y > topOfWater.transform.position.y) // if it's above water, make the leak
         {
             //Debug.Log("Selected " + selectedSpawnPoint + " at " + leakSpawnPoints[selectedSpawnPoint].transform.position);
@@ -45,7 +66,6 @@ public class LeakSpawner : MonoBehaviour
 
             FindObjectOfType<CameraShake>().ShakeCamera(2f, 2f);
         }
-
         
     }
 
