@@ -34,25 +34,7 @@ public class LeakSpawner : MonoBehaviour
         
         int selectedSpawnPoint = Random.Range(0, leakSpawnPoints.Length);
 
-        /*
-        bool foundValidSpawnPoint = false;
-        int loopBreaker = 0;
-        do
-        {
-            if (true)//spawnpoint is valid and spawnpoint is not occupied
-            {
-                //Make the spawn point, call spawn function on the spawn point
-                // Sets it to occpied
-                foundValidSpawnPoint = true;
-                loopBreaker += 1;
-            }
-            else
-            {
-                foundValidSpawnPoint = false;
-                loopBreaker += 1;
-            }
-        } while (foundValidSpawnPoint == false && loopBreaker < 20);
-        */
+        
 
 
         if (leakSpawnPoints[selectedSpawnPoint].transform.position.y > topOfWater.transform.position.y) // if it's above water, make the leak

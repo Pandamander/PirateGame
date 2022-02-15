@@ -43,7 +43,8 @@ public class Leak : MonoBehaviour
 
     private void PatchLeak()
     {
-        FindObjectOfType<LeakSpawner>().RemoveLeak();
+        //FindObjectOfType<LeakSpawner>().RemoveLeak();
+        GetComponent<SpawnableObject>().RemoveSpawnedObject();
         FindObjectOfType<Repair>().RemoveLeak();
         Debug.Log("Patched leak!");
         Destroy(gameObject);
