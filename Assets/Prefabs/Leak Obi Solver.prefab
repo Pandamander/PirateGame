@@ -70,7 +70,7 @@ MonoBehaviour:
   minPoolSize: 0.5
   speed: 3
   lifespan: 20
-  randomVelocity: 0.5
+  randomVelocity: 0.2
   useShapeColor: 1
   emitterShapes:
   - {fileID: 4919764909282767322}
@@ -10091,22 +10091,16 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   particleSize: 0.1
   distribution:
-  - position: {x: -0.25, y: 0, z: 0}
+  - position: {x: -0.15, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-  - position: {x: -0.14, y: 0, z: 0}
+  - position: {x: -0.040000007, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-  - position: {x: -0.030000001, y: 0, z: 0}
+  - position: {x: 0.06999999, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-  - position: {x: 0.08, y: 0, z: 0}
-    velocity: {x: 0, y: 0, z: 1}
-    color: {r: 1, g: 1, b: 1, a: 1}
-  - position: {x: 0.19, y: 0, z: 0}
-    velocity: {x: 0, y: 0, z: 1}
-    color: {r: 1, g: 1, b: 1, a: 1}
-  lenght: 0.5
+  lenght: 0.3
   radialVelocity: 0
 --- !u!1 &4919764909352170080
 GameObject:
