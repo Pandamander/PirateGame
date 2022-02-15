@@ -25,17 +25,13 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Throwing harpoons - DONE
+Find solution for spawning - DONE
 
 NEXT UP:
+Translate the screenshots to spawning files
+Then, make it into your own spawning scripts for the harpoons
+Then, translate to the cracks as well
 
-
-Water simulation
-
-
-
-Collect treasure
-Make it so that the same leak doesn't appear in the same spot
 
 
 Make the ship bobbing still work while the ship is going down
