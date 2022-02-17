@@ -8,7 +8,7 @@ public class NewSpawnScript : MonoBehaviour
     public float spawnTime = 1.5f;
     public GameObject[] spawnableObjects; // Make sure these objects put here have the SpawnableObjects script added
 
-    public List<Transform> possibleSpawns = new List<Transform>();
+    public List<Transform> possibleSpawns = new List<Transform>(); // This keeps track of the list of possible 
 
     // Start is called before the first frame update
     void Start()

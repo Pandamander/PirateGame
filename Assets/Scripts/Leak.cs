@@ -20,11 +20,14 @@ public class Leak : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        // This old code was used when the ship sank based on the leak being present
         if (transform.position.y < topOfWater.transform.position.y - waterBuffer) // if the leak is underwater, you can't fix it. So remove it
         {
             PatchLeak();
             Debug.Log("Leak under water! Patching!");
         }
+        */
     }
 
     public void RepairLeak()

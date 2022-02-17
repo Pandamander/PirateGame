@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyTime: 3
   mySpawnPoint: {fileID: 0}
+  nameOfParentSpawnerObj: ItemSpawner
 --- !u!114 &4333508646234023382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 622e9d2589f0944da98c615f75ccead0, type: 2}
+  alreadyTriggered: 0
 --- !u!61 &4333508646234023383
 BoxCollider2D:
   m_ObjectHideFlags: 0
