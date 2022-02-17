@@ -573,7 +573,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1440245165
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2011746730592321648, guid: cc739c4ce915f446da7d958e0e79b7b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -600,3 +600,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyTime: 3
   mySpawnPoint: {fileID: 0}
+  nameOfParentSpawnerObj: LeakSpawner

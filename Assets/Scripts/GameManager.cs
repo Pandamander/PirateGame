@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] LeakSpawner myLeakSpawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +14,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // LeadSpawner sinks the ship
-        myLeakSpawner.CheckSinkShip();
+        
     }
 
 
@@ -25,29 +24,23 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Find solution for spawning - DONE
+Make the ItemPickup script detect collision
+Make pickup destroy the item and give it to you
+Make it so that when you throw harpoon, it checks if you hve a harpoon, and removes it
+implement your own item pickup script on the harpoon
+Translate new spawning system to the cracks
 
 NEXT UP:
-Translate the screenshots to spawning files
-Then, make it into your own spawning scripts for the harpoons
-Then, translate to the cracks as well
+Make it so that the cracks time out, fill the floors, then you lose
+
+Put the Solver and the child emitter on each leak
+Then when leak is spawned, pass the emitter into the Obi Fluid Renderer on the Camera
 
 
+5:22 - scritable object data setup
 
-Make the ship bobbing still work while the ship is going down
-Make some animation for the reparining
-Make it so you can bob and swim in the water
+Add the camera shake again
 
-Cooper's feedback:
-Speed up character walking
-
-
-
-
-Make treasure that you can collect
-Make water that you can swim in that goes up and down
-Have you get stunned when you get hit, or when you die
-Have levels, waves that you make it to, escalating chaos until you die
 
 
 P2 IDEAS:

@@ -23,7 +23,7 @@ public class EndGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (topOfship.transform.position.y < topOfWater.transform.position.y && !isGameOver)
+        if (false)
         {
             EndTheGame();
         }

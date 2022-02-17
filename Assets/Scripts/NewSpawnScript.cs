@@ -8,7 +8,7 @@ public class NewSpawnScript : MonoBehaviour
     public float spawnTime = 1.5f;
     public GameObject[] spawnableObjects; // Make sure these objects put here have the SpawnableObjects script added
 
-    public List<Transform> possibleSpawns = new List<Transform>();
+    public List<Transform> possibleSpawns = new List<Transform>(); // This keeps track of the list of possible 
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,6 @@ public class NewSpawnScript : MonoBehaviour
             int spawnObject = Random.Range(0, spawnableObjects.Length); // Pick an random object to spawn
 
             GameObject NewSpawnedObject = Instantiate(spawnableObjects[spawnObject], possibleSpawns[spawnIndex].position, possibleSpawns[spawnIndex].rotation) as GameObject;
-            Debug.Log(possibleSpawns[spawnIndex]);
             NewSpawnedObject.GetComponent<SpawnableObject>().mySpawnPoint = possibleSpawns[spawnIndex]; //NullReferenceException: If this is throwing an error, probably means the item spawned doesn't have the SpawnableObject script added to it
 
             possibleSpawns.RemoveAt(spawnIndex);
