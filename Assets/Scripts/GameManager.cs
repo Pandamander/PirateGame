@@ -25,12 +25,13 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Find solution for spawning - DONE
+
 
 NEXT UP:
-Translate the screenshots to spawning files
-Then, make it into your own spawning scripts for the harpoons
+Watch brackeys inventory, and implement your own item pickup script on the harpoon
 Then, translate to the cracks as well
+
+5:22 - scritable object data setup
 
 
 
