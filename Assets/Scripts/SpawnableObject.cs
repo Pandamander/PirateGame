@@ -12,7 +12,7 @@ public class SpawnableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NSS = GameObject.Find("NewSpawner").GetComponent<NewSpawnScript>(); // Make sure this is set to the name of the GameObject that's the NewSpawnScript
+        NSS = GameObject.Find("ItemSpawner").GetComponent<NewSpawnScript>(); // Make sure this is set to the name of the GameObject that's the NewSpawnScript
 
         //StartCoroutine(DestroyMe());
     }

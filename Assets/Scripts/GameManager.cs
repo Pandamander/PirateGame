@@ -25,10 +25,14 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-
+Make the ItemPickup script detect collision
 
 NEXT UP:
-Watch brackeys inventory, and implement your own item pickup script on the harpoon
+
+Make pickup destroy the item and give it to you
+Make it so that when you throw harpoon, it checks if you hve a harpoon, and removes it
+
+implement your own item pickup script on the harpoon
 Then, translate to the cracks as well
 
 5:22 - scritable object data setup

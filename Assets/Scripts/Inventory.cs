@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
 
     public List<Item> items = new List<Item>();
+    public int inventoryCap = 100;
 
     void Awake()
     {
@@ -21,8 +22,16 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-        items.Add(item);
-        return true;
+        if (items.Count < inventoryCap)
+        {
+            items.Add(item);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
     public void Remove(Item item)
