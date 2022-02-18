@@ -4,22 +4,51 @@ using UnityEngine;
 
 public class Leak : MonoBehaviour
 {
-    [SerializeField] GameObject topOfWater;
     [SerializeField] float waterBuffer = 0.1f;
+    SpriteRenderer sprite;
     public HealthBar healthBar;
     int repairsRemaining = 5;
+    public int leakStage = 0;
+    public int finalLeakStage = 4;
+    public float stageDuration = 5f;
+    public float stageCounter = 0f;
+    public bool stopCounting = false;
 
     // Start is called before the first frame update
     void Awake()
     {
-        topOfWater = GameObject.Find("TopOfWater");
         healthBar = GetComponentInChildren<HealthBar>();
+        sprite = GetComponent<SpriteRenderer>();
         healthBar.gameObject.SetActive(false);
+        SetLeakVisual(leakStage);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (leakStage >= finalLeakStage) // if leak already broken, don't continue
+        {
+            LeakBreaks();
+            return;
+        }
+
+        stageCounter += Time.deltaTime;
+
+        if (stageCounter >= stageDuration) // if time to go to next stage
+        {
+            if (leakStage < finalLeakStage) // if ther eare still more stages to progress
+            {
+                stageCounter = 0f;
+                leakStage += 1;
+                SetLeakVisual(leakStage);
+            }
+            else
+            {
+                stopCounting = true;
+                
+            }
+            
+        }
         /*
         // This old code was used when the ship sank based on the leak being present
         if (transform.position.y < topOfWater.transform.position.y - waterBuffer) // if the leak is underwater, you can't fix it. So remove it
@@ -28,6 +57,33 @@ public class Leak : MonoBehaviour
             Debug.Log("Leak under water! Patching!");
         }
         */
+    }
+
+    void SetLeakVisual(int whichStage)
+    {
+        switch (whichStage)
+        {
+            case 0:
+
+                break;
+
+            case 1:
+
+                break;
+
+            case 2:
+
+                break;
+
+            case 3:
+
+                break;
+        }
+    }
+
+    void LeakBreaks()
+    {
+        Debug.Log("The leak has broken!!!!");
     }
 
     public void RepairLeak()

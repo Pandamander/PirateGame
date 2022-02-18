@@ -24,13 +24,18 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Make the ItemPickup script detect collision
-Make pickup destroy the item and give it to you
-Make it so that when you throw harpoon, it checks if you hve a harpoon, and removes it
-implement your own item pickup script on the harpoon
-Translate new spawning system to the cracks
+Set up new tile map
+Remake the leak spawner
+Make the leak objects have stages
+Make the leaks progress through the stages over time
+
 
 NEXT UP:
+Finalize the leak breaking code so that it's properly counting levels
+Make the stages hae different sprites
+Make the final stage break the floor
+Have a collection of floors
+
 Make it so that the cracks time out, fill the floors, then you lose
 
 Put the Solver and the child emitter on each leak
