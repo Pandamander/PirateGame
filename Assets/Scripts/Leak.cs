@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Obi;
 
 public class Leak : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Leak : MonoBehaviour
     public float stageDuration = 5f;
     public float stageCounter = 0f;
     public bool stopCounting = false;
+    public ObiFluidRenderer obiFluidRenderer;
+    public ObiParticleRenderer myObiParticleRenderer;
+    private int openObiEmitterSlot = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +25,26 @@ public class Leak : MonoBehaviour
         healthBar = GetComponentInChildren<HealthBar>();
         healthBar.gameObject.SetActive(false);
         SetLeakVisual(leakStage);
+
+        obiFluidRenderer = GameObject.FindObjectOfType<ObiFluidRenderer>(); // Get the main ObiRendeer on the camera
+        myObiParticleRenderer = gameObject.GetComponentInChildren<ObiParticleRenderer>();
+
+        
+
+        if (obiFluidRenderer.particleRenderers[0] == null)
+        {
+            openObiEmitterSlot = 0;
+        }
+        else if (obiFluidRenderer.particleRenderers[1] == null)
+        {
+            openObiEmitterSlot = 1;
+        } else if (obiFluidRenderer.particleRenderers[2] == null)
+        {
+            openObiEmitterSlot = 2;
+        }
+
+        obiFluidRenderer.particleRenderers[openObiEmitterSlot] = myObiParticleRenderer;
+
     }
 
     // Update is called once per frame
@@ -106,6 +130,10 @@ public class Leak : MonoBehaviour
         GetComponent<SpawnableObject>().RemoveSpawnedObject();
         FindObjectOfType<Repair>().RemoveLeak();
         Debug.Log("Patched leak!");
+
+        obiFluidRenderer.particleRenderers[openObiEmitterSlot] = null; // Free up the emitter slot
+
+
         Destroy(gameObject);
     }
 }
