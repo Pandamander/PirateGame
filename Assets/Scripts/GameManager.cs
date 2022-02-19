@@ -28,10 +28,11 @@ Make camera pan up and down
 Fix ladders -
 Fix jumping
 Finalize the leak breaking code so that it's properly counting levels
+Make the stages hae different sprites
 
 NEXT UP:
 
-Make the stages hae different sprites
+
 Make the final stage break the floor
 Have a collection of floors
 
