@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6609528226771535278}
   - component: {fileID: 204817372492031765}
   - component: {fileID: 5083983124063225967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PRPCannonRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

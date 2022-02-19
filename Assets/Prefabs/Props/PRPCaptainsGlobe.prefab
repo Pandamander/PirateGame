@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3345460428678452975}
   - component: {fileID: 3345460428678452974}
   - component: {fileID: 3345460428678452973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PRPCaptainsGlobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

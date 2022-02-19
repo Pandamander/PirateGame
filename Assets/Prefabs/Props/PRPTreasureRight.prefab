@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1102502213529064804}
   - component: {fileID: 5872572070062681933}
   - component: {fileID: 1800378294004659102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PRPTreasureRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

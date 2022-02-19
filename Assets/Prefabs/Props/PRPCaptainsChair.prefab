@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1181590017606704130}
   - component: {fileID: 1181590017606704131}
   - component: {fileID: 1181590017606704128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PRPCaptainsChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}

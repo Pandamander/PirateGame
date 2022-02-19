@@ -472,6 +472,8 @@ GameObject:
   - component: {fileID: 8927123229280246847}
   - component: {fileID: 8927123229280246846}
   - component: {fileID: 4038237875026646951}
+  - component: {fileID: 6117851947966591950}
+  - component: {fileID: 7235096750579744619}
   m_Layer: 0
   m_Name: Leak
   m_TagString: Leak
@@ -506,9 +508,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba40b7e20101b44b5877de7d5fc9a8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topOfWater: {fileID: 0}
   waterBuffer: 0
+  sprite: {fileID: 8927123229280246846}
+  stageSprites:
+  - {fileID: 7140947497554619938, guid: f2f774b99aa4541318d13948b3dc0860, type: 3}
+  - {fileID: -1830131094936694908, guid: f2f774b99aa4541318d13948b3dc0860, type: 3}
+  - {fileID: 7154556748712396244, guid: f2f774b99aa4541318d13948b3dc0860, type: 3}
+  - {fileID: -3724753305138816522, guid: f2f774b99aa4541318d13948b3dc0860, type: 3}
   healthBar: {fileID: 0}
+  leakStage: 0
+  finalLeakStage: 4
+  stageDuration: 8
+  stageCounter: 0
+  stopCounting: 0
 --- !u!61 &8927123229280246847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -522,18 +534,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016130209, y: -0.00026077032}
+  m_Offset: {x: -0.18293941, y: -0.3466184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.4}
+    oldSize: {x: 3.5, y: 3.125}
     newSize: {x: 0.4, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59509754, y: 0.6171595}
+  m_Size: {x: 2.6652944, y: 3.39082}
   m_EdgeRadius: 0
 --- !u!212 &8927123229280246846
 SpriteRenderer:
@@ -575,7 +587,7 @@ SpriteRenderer:
   m_SortingLayerID: -1440245165
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2011746730592321648, guid: cc739c4ce915f446da7d958e0e79b7b0, type: 3}
+  m_Sprite: {fileID: 7154556748712396244, guid: f2f774b99aa4541318d13948b3dc0860, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -601,3 +613,139 @@ MonoBehaviour:
   destroyTime: 3
   mySpawnPoint: {fileID: 0}
   nameOfParentSpawnerObj: LeakSpawner
+--- !u!114 &6117851947966591950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927123229280246844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d174fab52f0c4b8399f25d5c3ea524c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulateWhenInvisible: 1
+  m_Backend: 1
+  parameters:
+    mode: 0
+    interpolation: 0
+    gravity: {x: 0, y: -9.81, z: 0}
+    damping: 0
+    maxAnisotropy: 3
+    sleepThreshold: 0.0005
+    collisionMargin: 0.02
+    maxDepenetration: 10
+    continuousCollisionDetection: 1
+    shockPropagation: 0
+    surfaceCollisionIterations: 8
+    surfaceCollisionTolerance: 0.005
+  gravity: {x: 0, y: -9.81, z: 0}
+  gravitySpace: 1
+  worldLinearInertiaScale: 0
+  worldAngularInertiaScale: 0
+  distanceConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  bendingConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  particleCollisionConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  particleFrictionConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  collisionConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  frictionConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  skinConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  volumeConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  shapeMatchingConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  tetherConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  pinConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  stitchConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  densityConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  stretchShearConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  bendTwistConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  chainConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 0
+--- !u!114 &7235096750579744619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927123229280246844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c37f4b1f0174c6ebfdf0e7b8af64a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solverIndices: 
+  m_CollisionMaterial: {fileID: 0}
+  m_SurfaceCollisions: 0
+  emitterBlueprint: {fileID: 0}
+  filter: -65534
+  emissionMethod: 0
+  minPoolSize: 0.5
+  speed: 0.25
+  lifespan: 4
+  randomVelocity: 0
+  useShapeColor: 1
+  emitterShapes: []
+  life: []

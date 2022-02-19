@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5653896972637077242}
   - component: {fileID: 1664299830021037121}
   - component: {fileID: 5999498421613654843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PRPBarrelUpright
   m_TagString: Untagged
   m_Icon: {fileID: 0}

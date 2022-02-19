@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2674236826766118406}
   - component: {fileID: 6139815377307061907}
   - component: {fileID: 8457814479074052193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PRPBarrelSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}

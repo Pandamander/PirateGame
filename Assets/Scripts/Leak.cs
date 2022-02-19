@@ -5,7 +5,8 @@ using UnityEngine;
 public class Leak : MonoBehaviour
 {
     [SerializeField] float waterBuffer = 0.1f;
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
+    public Sprite[] stageSprites;
     public HealthBar healthBar;
     int repairsRemaining = 5;
     public int leakStage = 0;
@@ -18,7 +19,6 @@ public class Leak : MonoBehaviour
     void Awake()
     {
         healthBar = GetComponentInChildren<HealthBar>();
-        sprite = GetComponent<SpriteRenderer>();
         healthBar.gameObject.SetActive(false);
         SetLeakVisual(leakStage);
     }
@@ -26,29 +26,29 @@ public class Leak : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (leakStage >= finalLeakStage) // if leak already broken, don't continue
+        // This make the leaks progress through the stages and then crack
+        if (stopCounting == false)
         {
-            LeakBreaks();
-            return;
-        }
-
-        stageCounter += Time.deltaTime;
-
-        if (stageCounter >= stageDuration) // if time to go to next stage
-        {
-            if (leakStage < finalLeakStage) // if ther eare still more stages to progress
+            if (leakStage < finalLeakStage)
             {
-                stageCounter = 0f;
-                leakStage += 1;
-                SetLeakVisual(leakStage);
+                stageCounter += Time.deltaTime;
+
+                if (stageCounter >= stageDuration) // if time to go to next stage
+                {
+                    stageCounter = 0f;
+                    leakStage += 1;
+                    SetLeakVisual(leakStage);
+                }
             }
             else
             {
+                LeakBreaks();
                 stopCounting = true;
-                
             }
-            
         }
+        
+
+        
         /*
         // This old code was used when the ship sank based on the leak being present
         if (transform.position.y < topOfWater.transform.position.y - waterBuffer) // if the leak is underwater, you can't fix it. So remove it
@@ -64,19 +64,19 @@ public class Leak : MonoBehaviour
         switch (whichStage)
         {
             case 0:
-
+                sprite.sprite = stageSprites[0];
                 break;
 
             case 1:
-
+                sprite.sprite = stageSprites[1];
                 break;
 
             case 2:
-
+                sprite.sprite = stageSprites[2];
                 break;
 
             case 3:
-
+                sprite.sprite = stageSprites[3];
                 break;
         }
     }

@@ -24,14 +24,13 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Set up new tile map
-Remake the leak spawner
-Make the leak objects have stages
-Make the leaks progress through the stages over time
-
+Make camera pan up and down
+Fix ladders -
+Fix jumping
+Finalize the leak breaking code so that it's properly counting levels
 
 NEXT UP:
-Finalize the leak breaking code so that it's properly counting levels
+
 Make the stages hae different sprites
 Make the final stage break the floor
 Have a collection of floors
