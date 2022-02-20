@@ -24,15 +24,10 @@ public class GameManager : MonoBehaviour
 
 /*
 DONE:
-Make camera pan up and down
-Fix ladders -
-Fix jumping
-Finalize the leak breaking code so that it's properly counting levels
-Make the stages hae different sprites
+
 
 NEXT UP:
-
-
+Fix running
 Make the final stage break the floor
 Have a collection of floors
 

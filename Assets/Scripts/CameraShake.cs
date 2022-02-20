@@ -27,7 +27,7 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera(float duration, float intensity)
     {
-        ShakeElapsedTime = ShakeDuration;
+        ShakeElapsedTime = duration;
         ShakeAmplitude = intensity;
     }
 

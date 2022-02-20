@@ -49978,7 +49978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172350596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.231, y: 0.175, z: 0}
+  m_LocalPosition: {x: 0.379, y: -0.143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2044313890}
@@ -53698,7 +53698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915677691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.263, z: 0}
+  m_LocalPosition: {x: 0, y: -0.499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2044313890}
@@ -53738,7 +53738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954549719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0722, z: 0}
+  m_LocalPosition: {x: 0, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2044313890}
@@ -53900,6 +53900,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1915677692}
   m_CeilingCheck: {fileID: 1954549720}
   m_CrouchDisableCollider: {fileID: 0}
+  m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -53999,9 +54000,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0004851222, y: -0.21507868}
+  m_Offset: {x: 0.018951178, y: -0.1726067}
   serializedVersion: 2
-  m_Radius: 0.2857422
+  m_Radius: 0.30974805
 --- !u!61 &2044313892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54015,7 +54016,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0039352775, y: 0.3375355}
+  m_Offset: {x: -0.0016046166, y: 0.20273304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -54026,7 +54027,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6641208, y: 0.20407367}
+  m_Size: {x: 0.5791769, y: 0.4736786}
   m_EdgeRadius: 0
 --- !u!114 &2044313893
 MonoBehaviour:

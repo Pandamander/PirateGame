@@ -45,6 +45,7 @@ public class Leak : MonoBehaviour
 
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = myObiParticleRenderer;
 
+
     }
 
     // Update is called once per frame
@@ -89,18 +90,22 @@ public class Leak : MonoBehaviour
         {
             case 0:
                 sprite.sprite = stageSprites[0];
+                FindObjectOfType<CameraShake>().ShakeCamera(0.5f, 4f);
                 break;
 
             case 1:
                 sprite.sprite = stageSprites[1];
+                FindObjectOfType<CameraShake>().ShakeCamera(0.7f, 5f);
                 break;
 
             case 2:
                 sprite.sprite = stageSprites[2];
+                FindObjectOfType<CameraShake>().ShakeCamera(1f, 6f);
                 break;
 
             case 3:
                 sprite.sprite = stageSprites[3];
+                FindObjectOfType<CameraShake>().ShakeCamera(2f, 10f);
                 break;
         }
     }
