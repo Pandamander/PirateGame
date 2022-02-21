@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: Railing_Left
+  m_Name: Railing_Middle_A
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 21300000, guid: f9b921d9daa30634e9a8ef334a2dddd8, type: 3}
-  - {fileID: 21300000, guid: 0cab4c34a50b8f24ea8c1f6316e29610, type: 3}
-  - {fileID: 21300000, guid: 01b681eb038f0d741bc0d69ea9ea0220, type: 3}
+  - {fileID: 21300000, guid: 77ba1474e936f134590072234c567a0b, type: 3}
+  - {fileID: 21300000, guid: 6197579f81498824389e15c942764ca2, type: 3}
+  - {fileID: 21300000, guid: 7ebd1d8402de33a4da9c4220f202622c, type: 3}
   m_MinSpeed: 10
   m_MaxSpeed: 10
   m_AnimationStartTime: 0
