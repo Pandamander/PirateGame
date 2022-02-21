@@ -22,19 +22,21 @@ public class GameManager : MonoBehaviour
 
 
 
-/*
-DONE:
 
+/*
+ * 
+ * 
+
+DONE:
+Fix running
 
 NEXT UP:
-Fix running
+
 Make the final stage break the floor
 Have a collection of floors
 
 Make it so that the cracks time out, fill the floors, then you lose
 
-Put the Solver and the child emitter on each leak
-Then when leak is spawned, pass the emitter into the Obi Fluid Renderer on the Camera
 
 
 5:22 - scritable object data setup
