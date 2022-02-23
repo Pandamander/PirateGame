@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tentacles
+    uniqueID: 3085343851
+    locked: 0
   - name: Background
     uniqueID: 331369773
     locked: 0
