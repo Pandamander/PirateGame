@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557517614802748407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.231, y: 0.175, z: 0}
+  m_LocalPosition: {x: 0.379, y: -0.143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 557517615005574225}
@@ -50,6 +50,8 @@ GameObject:
   - component: {fileID: 557517615005574235}
   - component: {fileID: 557517615005574234}
   - component: {fileID: 557517615005574233}
+  - component: {fileID: 5332051490930165380}
+  - component: {fileID: 5332051490930165379}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -65,7 +67,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557517615005574253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.702, y: 3.646, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 557517615085906603}
@@ -137,17 +139,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcac9ebd26e44a51920bb6c59792acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 500
+  m_JumpForce: 800
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.08
   m_AirControl: 1
-  maxHorizontalSpeed: 0.5
+  maxHorizontalSpeed: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
   m_GroundCheck: {fileID: 557517615125827215}
   m_CeilingCheck: {fileID: 557517615085906603}
   m_CrouchDisableCollider: {fileID: 0}
+  m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -182,7 +185,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3d41331c67c26416cb6ffbc5a80f3d0e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -200,7 +203,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0024449676, y: 0.2943136}
+  m_Offset: {x: -0.0016046166, y: 0.20273304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -211,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34517226, y: 0.117629886}
+  m_Size: {x: 0.5791769, y: 0.4736786}
   m_EdgeRadius: 0
 --- !u!58 &557517615005574224
 CircleCollider2D:
@@ -222,13 +225,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 557517615005574253}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3d41331c67c26416cb6ffbc5a80f3d0e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019755512, y: 0.1649767}
+  m_Offset: {x: 0.018951178, y: -0.1726067}
   serializedVersion: 2
-  m_Radius: 0.16352846
+  m_Radius: 0.30974805
 --- !u!114 &557517615005574230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 557517615005574227}
-  runSpeed: 60
+  runSpeed: 100
   animator: {fileID: 557517615005574229}
 --- !u!95 &557517615005574229
 Animator:
@@ -319,6 +322,35 @@ MonoBehaviour:
   firePoint: {fileID: 557517614802748406}
   bulletPrefab: {fileID: 1331278390483499501, guid: 42cd6a781d8f74c1aa826f27cc0c7e53, type: 3}
   itemToShoot: {fileID: 11400000, guid: 622e9d2589f0944da98c615f75ccead0, type: 2}
+--- !u!114 &5332051490930165380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557517615005574253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6a9934a1a0f44e89ccbb25355461bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thickness: 0.1
+  material: {fileID: 0}
+  filter: -65535
+  sourceCollider: {fileID: 557517615005574231}
+--- !u!114 &5332051490930165379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557517615005574253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e1dfa1dce354ed499bfb5d2b1cd799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicForParticles: 1
 --- !u!1 &557517615085906596
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557517615085906596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0722, z: 0}
+  m_LocalPosition: {x: 0, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 557517615005574225}
@@ -373,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557517615125827208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.263, z: 0}
+  m_LocalPosition: {x: 0, y: -0.499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 557517615005574225}
