@@ -517,11 +517,12 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   leakStage: 0
   finalLeakStage: 4
-  stageDuration: 8
+  stageDuration: 2
   stageCounter: 0
   stopCounting: 0
   obiFluidRenderer: {fileID: 0}
   myObiParticleRenderer: {fileID: 0}
+  floorThisLeakIsOn: 0
 --- !u!61 &8927123229280246847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -585,8 +586,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1440245165
-  m_SortingLayer: 3
+  m_SortingLayerID: 331369773
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7154556748712396244, guid: f2f774b99aa4541318d13948b3dc0860, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

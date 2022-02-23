@@ -31,7 +31,7 @@ public class EndGame : MonoBehaviour
         secondsSurvived += Time.deltaTime;
     }
 
-    void EndTheGame()
+    public void EndTheGame()
     {
         isGameOver = true;
         endingUI.SetActive(true);

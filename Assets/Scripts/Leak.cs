@@ -18,6 +18,7 @@ public class Leak : MonoBehaviour
     public ObiFluidRenderer obiFluidRenderer;
     public ObiParticleRenderer myObiParticleRenderer;
     private int openObiEmitterSlot = 0;
+    public int floorThisLeakIsOn;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,6 +30,7 @@ public class Leak : MonoBehaviour
         obiFluidRenderer = GameObject.FindObjectOfType<ObiFluidRenderer>(); // Get the main ObiRendeer on the camera
         myObiParticleRenderer = gameObject.GetComponentInChildren<ObiParticleRenderer>();
 
+        SetFloor();
         
 
         if (obiFluidRenderer.particleRenderers[0] == null)
@@ -105,14 +107,14 @@ public class Leak : MonoBehaviour
 
             case 3:
                 sprite.sprite = stageSprites[3];
-                FindObjectOfType<CameraShake>().ShakeCamera(2f, 10f);
+                FindObjectOfType<CameraShake>().ShakeCamera(1.5f, 10f);
                 break;
         }
     }
 
     void LeakBreaks()
     {
-        Debug.Log("The leak has broken!!!!");
+        FindObjectOfType<FloodFloors>().FloodFloor(floorThisLeakIsOn);
     }
 
     public void RepairLeak()
@@ -140,5 +142,22 @@ public class Leak : MonoBehaviour
 
 
         Destroy(gameObject);
+    }
+
+    private void SetFloor()
+    {
+        // This checks the height to see what floor it's on
+        if (transform.position.y > 0.52)
+        {
+            floorThisLeakIsOn = 0;
+        }
+        else if (transform.position.y > -4.74)
+        {
+            floorThisLeakIsOn = 1;
+        }
+        else
+        {
+            floorThisLeakIsOn = 2;
+        }
     }
 }

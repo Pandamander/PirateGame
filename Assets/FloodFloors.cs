@@ -6,12 +6,14 @@ public class FloodFloors : MonoBehaviour
 {
     public List<bool> areFloorsFlooded;
     [SerializeField] public List<GameObject> floorsToFlood;
+    [SerializeField] public EndGame endGame;
+    
 
     // Start is called before the first frame update
 
     void Start()
     {
-        AnimateFloorFlooding(0);
+        
     }
 
     // Update is called once per frame
@@ -20,9 +22,11 @@ public class FloodFloors : MonoBehaviour
         
     }
 
-    void FloodFloor(int whichFloor)
+    public void FloodFloor(int whichFloor)
     {
         areFloorsFlooded[whichFloor] = true;
+        AnimateFloorFlooding(whichFloor);
+        CheckEndOfGame();
     }
 
     void CheckEndOfGame()
@@ -46,10 +50,11 @@ public class FloodFloors : MonoBehaviour
     void AnimateFloorFlooding(int whichFloor)
     {
         floorsToFlood[whichFloor].GetComponent<Animator>().SetBool("isFlooded", true);
+        
     }
 
     void EndGame()
     {
-        // Move over the end the game functions
+        endGame.EndTheGame();
     }
 }
