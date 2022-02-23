@@ -5,51 +5,71 @@ using UnityEngine;
 public class Tentacle : MonoBehaviour
 {
 
-    public int length; // the number of positions to create in the line renderer
+    public int totalLineRendPositions; // the number of positions to create in the line renderer
     public LineRenderer lineRend; // reference to the line renderer component
-    public Vector3[] segmentPoses; // positions for each point in the line renderer
-    private Vector3[] segmentV; // used in the smoothdamp function for positioning each line renderer point
+    private Vector3[] lineRendPositions; // positions for each point in the line renderer
+    private Vector3[] lineRendPositionVelocity; // used in the smoothdamp function for positioning each line renderer point
 
     public Transform targetDir; // initial position for the first point in the line renderer
 
     public float targetDist; // distance from one point in the line renderer to the next
     public float smoothSpeed; // speed with which to adjust line renderer positions in the smooth damp function
 
-    public float wiggleSpeed;
+    public float wiggleSpeed; 
     public float wiggleMagnitude;
     public Transform wiggleDir;
 
+    public bool flipWiggleDirection; // boolean to flip the direction of the initial wiggle rotation
+
+    public Transform[] bodyParts; // use this to attach other gameobjects to points in the line renderer
+
     void Start()
     {
-        lineRend.positionCount = length;
-        segmentPoses = new Vector3[length];
-        segmentV = new Vector3[length];
+        lineRend.positionCount = totalLineRendPositions;
+        lineRendPositions = new Vector3[totalLineRendPositions];
+        lineRendPositionVelocity = new Vector3[totalLineRendPositions];
 
         ResetPos();
     }
 
     void Update()
     {
-        wiggleDir.localRotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
-
-        segmentPoses[0] = targetDir.position;
-
-        for (int i = 1; i < segmentPoses.Length; i++)
+        // this determines the initial direction of wiggle rotation that gets applied to the lineRenderer
+        if (flipWiggleDirection)
         {
-            //Vector3 targetPos = segmentPoses[i - 1] + (segmentPoses[i] - segmentPoses[i - 1]).normalized * targetDist;
-            //segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], targetPos, ref segmentV[i], smoothSpeed);
-            segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], segmentPoses[i - 1] + targetDir.right * targetDist, ref segmentV[i], smoothSpeed);
+            wiggleDir.localRotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude * -1);
+        } else
+        {
+            wiggleDir.localRotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
         }
-        lineRend.SetPositions(segmentPoses);
+
+        lineRendPositions[0] = targetDir.position; // set the position of the first line renderer point
+
+        for (int i = 1; i < lineRendPositions.Length; i++)
+        {
+            //Vector3 targetPos = lineRendPositions[i - 1] + (lineRendPositions[i] - lineRendPositions[i - 1]).normalized * targetDist;
+            //lineRendPositions[i] = Vector3.SmoothDamp(lineRendPositions[i], targetPos, ref lineRendPositionVelocity[i], smoothSpeed);
+            lineRendPositions[i] = Vector3.SmoothDamp(lineRendPositions[i], lineRendPositions[i - 1] + (targetDir.right * targetDist), ref lineRendPositionVelocity[i], smoothSpeed);
+        }
+        lineRend.SetPositions(lineRendPositions);
+
+        if (bodyParts != null)
+        {
+            for (int i = 0; i < bodyParts.Length; i++)
+            {
+
+            }
+        }
+
     }
 
     private void ResetPos()
     {
-        segmentPoses[0] = targetDir.position;
-        for (int i = 1; i < length; i++)
+        lineRendPositions[0] = targetDir.position;
+        for (int i = 1; i < totalLineRendPositions; i++)
         {
-            segmentPoses[i] = segmentPoses[i - 1] + targetDir.right * targetDist;
+            lineRendPositions[i] = lineRendPositions[i - 1] + targetDir.right * targetDist;
         }
-        lineRend.SetPositions(segmentPoses);
+        lineRend.SetPositions(lineRendPositions);
     }
 }
