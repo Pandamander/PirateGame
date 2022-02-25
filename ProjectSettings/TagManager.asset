@@ -58,11 +58,11 @@ TagManager:
   - name: Lanterns
     uniqueID: 927827599
     locked: 0
-  - name: Foreground
-    uniqueID: 2854722131
-    locked: 0
   - name: Ladders
     uniqueID: 2557478679
+    locked: 0
+  - name: Foreground
+    uniqueID: 2854722131
     locked: 0
   - name: More Foreground
     uniqueID: 2072113253

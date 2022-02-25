@@ -37,6 +37,7 @@ public class NewSpawnScript : MonoBehaviour
             int spawnObject = Random.Range(0, spawnableObjects.Length); // Pick an random object to spawn
 
             GameObject NewSpawnedObject = Instantiate(spawnableObjects[spawnObject], possibleSpawns[spawnIndex].position, possibleSpawns[spawnIndex].rotation) as GameObject;
+            NewSpawnedObject.transform.SetParent(this.transform); // parent spawned object to whatever transform this script is contained within
             NewSpawnedObject.GetComponent<SpawnableObject>().mySpawnPoint = possibleSpawns[spawnIndex]; //NullReferenceException: If this is throwing an error, probably means the item spawned doesn't have the SpawnableObject script added to it
 
             possibleSpawns.RemoveAt(spawnIndex);
