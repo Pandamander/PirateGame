@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 2347702912661273020}
   - component: {fileID: 2594849604310821482}
   - component: {fileID: 804176971208410289}
-  - component: {fileID: 7192857815933701432}
   - component: {fileID: 4458955950691383057}
-  - component: {fileID: 8386493587543370690}
   m_Layer: 6
   m_Name: PRPCrate
   m_TagString: Untagged
@@ -73,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1440245165
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 01f9832b31c11c843a91cbf716242d6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,27 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &7192857815933701432
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5495937902061966600}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 100
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4458955950691383057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,16 +126,3 @@ MonoBehaviour:
   material: {fileID: 0}
   filter: -65535
   sourceCollider: {fileID: 804176971208410289}
---- !u!114 &8386493587543370690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5495937902061966600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e1dfa1dce354ed499bfb5d2b1cd799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kinematicForParticles: 0

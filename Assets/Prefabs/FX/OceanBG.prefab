@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5384924350526299113
+--- !u!1 &4182971297324715136
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5384924350526299112}
+  - component: {fileID: 4182971297324715137}
   m_Layer: 0
   m_Name: WiggleDir
   m_TagString: Untagged
@@ -16,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5384924350526299112
+--- !u!4 &4182971297324715137
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5384924350526299113}
+  m_GameObject: {fileID: 4182971297324715136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.03, y: -25.15, z: 0}
+  m_LocalPosition: {x: 15.97, y: -29.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5384924351555759797}
-  m_Father: {fileID: 5384924351537357955}
+  - {fileID: 4182971298371975644}
+  m_Father: {fileID: 4182971298461610986}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5384924351528474684
+--- !u!1 &4182971298371975643
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,30 +39,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5384924351528474687}
+  - component: {fileID: 4182971298371975644}
   m_Layer: 0
-  m_Name: Ocean
+  m_Name: TargetDir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5384924351528474687
+--- !u!4 &4182971298371975644
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5384924351528474684}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 4182971298371975643}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5384924351537357955}
-  m_Father: {fileID: 0}
+  m_LocalScale: {x: 1, y: -1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4182971297324715137}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5384924351537357966
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &4182971298461610983
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,9 +69,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5384924351537357955}
-  - component: {fileID: 5384924351537357952}
-  - component: {fileID: 5384924351537357953}
+  - component: {fileID: 4182971298461610986}
+  - component: {fileID: 4182971298461610985}
+  - component: {fileID: 4182971298461610984}
   m_Layer: 0
   m_Name: OceanWaveLineRenderer
   m_TagString: Untagged
@@ -80,28 +79,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5384924351537357955
+--- !u!4 &4182971298461610986
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5384924351537357966}
+  m_GameObject: {fileID: 4182971298461610983}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5384924350526299112}
-  m_Father: {fileID: 5384924351528474687}
+  - {fileID: 4182971297324715137}
+  m_Father: {fileID: 4182971298470547286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!120 &5384924351537357952
+--- !u!120 &4182971298461610985
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5384924351537357966}
+  m_GameObject: {fileID: 4182971298461610983}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -114,7 +113,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c05530d9c912e1e44b83dd1a5af810b6, type: 2}
+  - {fileID: 2100000, guid: c514e354edbec1343a4cda3da0baa213, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,15 +131,15 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1209623445
-  m_SortingLayer: 1
+  m_SortingLayerID: -24103337
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 20, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 19
+    widthMultiplier: 24
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -193,29 +192,29 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &5384924351537357953
+--- !u!114 &4182971298461610984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5384924351537357966}
+  m_GameObject: {fileID: 4182971298461610983}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b5a2018bec1d6247b1260732245bbbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   totalLineRendPositions: 200
-  lineRend: {fileID: 5384924351537357952}
-  targetDir: {fileID: 5384924351555759797}
+  lineRend: {fileID: 4182971298461610985}
+  targetDir: {fileID: 4182971298371975644}
   targetDist: 0.3
   smoothSpeed: 0.02
-  wiggleSpeed: 6
-  wiggleMagnitude: 8
-  wiggleDir: {fileID: 5384924350526299112}
-  flipWiggleDirection: 0
+  wiggleSpeed: 2
+  wiggleMagnitude: 6
+  wiggleDir: {fileID: 4182971297324715137}
+  flipWiggleDirection: 1
   bodyParts: []
---- !u!1 &5384924351555759794
+--- !u!1 &4182971298470547285
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,25 +222,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5384924351555759797}
+  - component: {fileID: 4182971298470547286}
   m_Layer: 0
-  m_Name: TargetDir
+  m_Name: OceanBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5384924351555759797
+--- !u!4 &4182971298470547286
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5384924351555759794}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_GameObject: {fileID: 4182971298470547285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: -1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5384924350526299112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4182971298461610986}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

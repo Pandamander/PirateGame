@@ -43,6 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sky
+    uniqueID: 2929786245
+    locked: 0
+  - name: Ocean
+    uniqueID: 4270863959
+    locked: 0
   - name: Tentacles
     uniqueID: 3085343851
     locked: 0
