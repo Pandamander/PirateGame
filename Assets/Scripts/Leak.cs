@@ -20,18 +20,22 @@ public class Leak : MonoBehaviour
     private int openObiEmitterSlot = 0;
     public int floorThisLeakIsOn;
 
+    private CameraShake cameraShake;
+
     // Start is called before the first frame update
     void Awake()
     {
+        cameraShake = FindObjectOfType<CameraShake>();
+
         healthBar = GetComponentInChildren<HealthBar>();
         healthBar.gameObject.SetActive(false);
+
         SetLeakVisual(leakStage);
 
         obiFluidRenderer = GameObject.FindObjectOfType<ObiFluidRenderer>(); // Get the main ObiRendeer on the camera
         myObiParticleRenderer = gameObject.GetComponentInChildren<ObiParticleRenderer>();
 
         SetFloor();
-        
 
         if (obiFluidRenderer.particleRenderers[0] == null)
         {
@@ -88,26 +92,27 @@ public class Leak : MonoBehaviour
 
     void SetLeakVisual(int whichStage)
     {
+
         switch (whichStage)
         {
             case 0:
                 sprite.sprite = stageSprites[0];
-                FindObjectOfType<CameraShake>().ShakeCamera(0.5f, 4f);
+                cameraShake.ShakeCamera(0.6f, 1.0f);
                 break;
 
             case 1:
                 sprite.sprite = stageSprites[1];
-                FindObjectOfType<CameraShake>().ShakeCamera(0.7f, 5f);
+                cameraShake.ShakeCamera(0.8f, 2.0f);
                 break;
 
             case 2:
                 sprite.sprite = stageSprites[2];
-                FindObjectOfType<CameraShake>().ShakeCamera(1f, 6f);
+                cameraShake.ShakeCamera(1.0f, 2.5f);
                 break;
 
             case 3:
                 sprite.sprite = stageSprites[3];
-                FindObjectOfType<CameraShake>().ShakeCamera(1.5f, 10f);
+                cameraShake.ShakeCamera(1.2f, 3.0f);
                 break;
         }
     }
