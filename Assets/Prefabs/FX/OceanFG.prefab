@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5384924350526299113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.97, y: -29.73, z: 0}
+  m_LocalPosition: {x: 16.1, y: -31.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5384924351555759797}
@@ -134,7 +134,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -24103337
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 20, y: 0, z: 1}
@@ -208,7 +208,7 @@ MonoBehaviour:
   totalLineRendPositions: 200
   lineRend: {fileID: 5384924351537357952}
   targetDir: {fileID: 5384924351555759797}
-  targetDist: 0.3
+  targetDist: 0.32
   smoothSpeed: 0.02
   wiggleSpeed: 2
   wiggleMagnitude: 6
