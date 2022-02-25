@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class EndGame : MonoBehaviour
 {
@@ -10,8 +12,9 @@ public class EndGame : MonoBehaviour
     private bool isGameOver;
     [SerializeField] GameObject endingUI;
     private float secondsSurvived;
-    private int finalSecondsSurvived;
+    private float finalSecondsSurvived;
     [SerializeField] Text scoreText;
+    [SerializeField] TMP_Text timeText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +30,13 @@ public class EndGame : MonoBehaviour
         {
             EndTheGame();
         }
+        else
+        {
+            secondsSurvived += Time.deltaTime;
+            timeText.text = secondsSurvived.ToString("0.00");
+        }
 
-        secondsSurvived += Time.deltaTime;
+        
     }
 
     public void EndTheGame()
@@ -36,7 +44,7 @@ public class EndGame : MonoBehaviour
         isGameOver = true;
         endingUI.SetActive(true);
 
-        finalSecondsSurvived = (int)secondsSurvived;
+        finalSecondsSurvived = secondsSurvived;
         scoreText.text = "You survived for: " + finalSecondsSurvived + " seconds";
 
     }

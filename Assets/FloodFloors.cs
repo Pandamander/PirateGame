@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class FloodFloors : MonoBehaviour
 {
     public List<bool> areFloorsFlooded;
     [SerializeField] public List<GameObject> floorsToFlood;
     [SerializeField] public EndGame endGame;
-    
+    [SerializeField] TMP_Text decksRemainingText;
+
 
     // Start is called before the first frame update
 
@@ -41,9 +44,13 @@ public class FloodFloors : MonoBehaviour
             }
         }
 
+        // Display how many decks remaining in the HUD UI
+        int remainingDecks = 3 - floodedFloorsCount;
+        decksRemainingText.text = "Decks Remaining: " + remainingDecks.ToString();
+
         if (floodedFloorsCount >= 3)
         {
-            EndGame();
+            endGame.EndTheGame();
         }
     }
 
@@ -53,8 +60,4 @@ public class FloodFloors : MonoBehaviour
         
     }
 
-    void EndGame()
-    {
-        endGame.EndTheGame();
-    }
 }
