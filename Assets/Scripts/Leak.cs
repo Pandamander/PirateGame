@@ -47,6 +47,9 @@ public class Leak : MonoBehaviour
         } else if (obiFluidRenderer.particleRenderers[2] == null)
         {
             openObiEmitterSlot = 2;
+        } else if (obiFluidRenderer.particleRenderers[3] == null)
+        {
+            openObiEmitterSlot = 3;
         }
 
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = myObiParticleRenderer;

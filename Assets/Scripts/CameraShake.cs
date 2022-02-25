@@ -74,24 +74,5 @@ public class CameraShake : MonoBehaviour
     void Update()
     {
 
-        //// If the Cinemachine componet is not set, avoid update
-        //if (VirtualCamera != null && virtualCameraNoise != null)
-        //{
-        //    // If Camera Shake effect is still playing
-        //    if (ShakeElapsedTime < ShakeDuration)
-        //    {
-        //        // Set Cinemachine Camera Noise parameters
-        //        virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
-        //        virtualCameraNoise.m_FrequencyGain = ShakeFrequency;
-
-        //        // Update Shake Timer
-        //        ShakeElapsedTime += Time.deltaTime;
-        //    }
-        //    else
-        //    {
-        //        // If Camera Shake effect is over, reset variables
-        //        virtualCameraNoise.m_AmplitudeGain = originalShakeAmplitude;
-        //    }
-        //}
     }
 }
