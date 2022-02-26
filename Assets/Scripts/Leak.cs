@@ -21,10 +21,12 @@ public class Leak : MonoBehaviour
     public int floorThisLeakIsOn;
 
     private CameraShake cameraShake;
+    [SerializeField] AudioSource audioSource;
 
-    public GameObject tooltip;
+    public GameObject tooltipWarning;
+    public GameObject tooltipSpacebar;
     public BoxCollider2D tooltipTriggerCollider;
-    private Vector3 tooltipOffset = new Vector3(-.8f, 1.5f, 0);
+    private Vector3 tooltipOffset = new Vector3(-.5f, 1.3f, 0);
 
     // Start is called before the first frame update
     void Awake()
@@ -59,12 +61,20 @@ public class Leak : MonoBehaviour
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = myObiParticleRenderer;
 
         // instantiate tooltip if a tooltip has been provided
-        if (tooltip != null)
+        // the reason to instantiate vs use a child object is so the tooltip doesn't inherit rotation values from the ship
+        if (tooltipWarning != null)
         {
-            tooltip = Instantiate(tooltip, transform.position + tooltipOffset, Quaternion.identity);
-            //StartCoroutine(Fader.FadeIn(tooltip.GetComponent<SpriteRenderer>(), .3f)); // fade in the tooltip
-            StartCoroutine(tooltip.GetComponent<TooltipLeak>().AnimateScaleAsBounce(.2f, 1.0f, .2f, 1.0f, .5f));
+            tooltipWarning = Instantiate(tooltipWarning, transform.position + tooltipOffset, Quaternion.identity);
+            StartCoroutine(Fader.FadeIn(tooltipWarning.GetComponent<SpriteRenderer>(), .2f)); // fade in the tooltip
         }
+
+        if (tooltipSpacebar != null)
+        {
+            tooltipSpacebar = Instantiate(tooltipSpacebar, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+            tooltipSpacebar.SetActive(false);
+        }
+
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -92,9 +102,14 @@ public class Leak : MonoBehaviour
         }
         
         // tooltip positioning
-        if (tooltip != null)
+        if (tooltipWarning != null)
         {
-            tooltip.transform.position = transform.position + tooltipOffset;
+            tooltipWarning.transform.position = transform.position + tooltipOffset;
+        }
+
+        if (tooltipSpacebar != null)
+        {
+            tooltipSpacebar.transform.position = transform.position + new Vector3(0, 2, 0);
         }
         
         /*
@@ -163,9 +178,13 @@ public class Leak : MonoBehaviour
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = null; // Free up the emitter slot
 
         // get rid of stuff when the leak is patched
-        if (tooltip != null)
+        if (tooltipWarning != null)
         {
-            Destroy(tooltip);
+            Destroy(tooltipWarning);
+        }
+        if (tooltipSpacebar != null)
+        {
+            Destroy(tooltipSpacebar);
         }
         Destroy(gameObject);
     }
@@ -193,10 +212,10 @@ public class Leak : MonoBehaviour
         if (collider.gameObject.GetComponent<Player>())
         {
             //Debug.Log("Trigger enter player");
-            if (tooltip != null)
+            if (tooltipSpacebar != null)
             {
-                TooltipLeak tooltipComponent = tooltip.GetComponent<TooltipLeak>();
-                tooltipComponent.SetTooltipState(TooltipLeak.TooltipStates.Spacebar);
+                tooltipWarning.SetActive(false);
+                tooltipSpacebar.SetActive(true);
             }
         }
     }
@@ -207,10 +226,10 @@ public class Leak : MonoBehaviour
         if (collider.gameObject.GetComponent<Player>())
         {
             //Debug.Log("Trigger exit player");
-            if (tooltip != null)
+            if (tooltipSpacebar != null)
             {
-                TooltipLeak tooltipComponent = tooltip.GetComponent<TooltipLeak>();
-                tooltipComponent.SetTooltipState(TooltipLeak.TooltipStates.Warning);
+                tooltipWarning.SetActive(true);
+                tooltipSpacebar.SetActive(false);
             }
         }
     }
