@@ -21,10 +21,25 @@ public class Leak : MonoBehaviour
     public int floorThisLeakIsOn;
 
     private CameraShake cameraShake;
+    [SerializeField] AudioSource audioSource;
 
     // Start is called before the first frame update
     void Awake()
     {
+        SetFloor();
+
+        /*
+        // This is an attempt to make leaks not appear on floors that are already flooded. For some reason it creates nullRefAcceptions
+        if (FindObjectOfType<FloodFloors>().areFloorsFlooded[floorThisLeakIsOn])
+        {
+            //Debug.Log("Despawned leak on floor " + floorThisLeakIsOn + ", already flooded");
+            PatchLeak();
+        }
+
+        */
+        
+
+
         cameraShake = FindObjectOfType<CameraShake>();
 
         healthBar = GetComponentInChildren<HealthBar>();
@@ -34,8 +49,6 @@ public class Leak : MonoBehaviour
 
         obiFluidRenderer = GameObject.FindObjectOfType<ObiFluidRenderer>(); // Get the main ObiRendeer on the camera
         myObiParticleRenderer = gameObject.GetComponentInChildren<ObiParticleRenderer>();
-
-        SetFloor();
 
         if (obiFluidRenderer.particleRenderers[0] == null)
         {
@@ -47,13 +60,13 @@ public class Leak : MonoBehaviour
         } else if (obiFluidRenderer.particleRenderers[2] == null)
         {
             openObiEmitterSlot = 2;
-        } else if (obiFluidRenderer.particleRenderers[3] == null)
-        {
-            openObiEmitterSlot = 3;
         }
 
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = myObiParticleRenderer;
 
+        audioSource.Play();
+        //Set up what floor this is on. If the floor is already flooded, then don't create it
+        
 
     }
 
@@ -78,6 +91,7 @@ public class Leak : MonoBehaviour
             {
                 LeakBreaks();
                 stopCounting = true;
+                PatchLeak();
             }
         }
         
@@ -127,7 +141,7 @@ public class Leak : MonoBehaviour
 
     public void RepairLeak()
     {
-        Debug.Log("Reparing, " + repairsRemaining + " repairs left");
+        // Debug.Log("Reparing, " + repairsRemaining + " repairs left");
         repairsRemaining -= 1;
 
         healthBar.gameObject.SetActive(true);
@@ -144,7 +158,7 @@ public class Leak : MonoBehaviour
         //FindObjectOfType<LeakSpawner>().RemoveLeak();
         GetComponent<SpawnableObject>().RemoveSpawnedObject();
         FindObjectOfType<Repair>().RemoveLeak();
-        Debug.Log("Patched leak!");
+        // Debug.Log("Patched leak!");
 
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = null; // Free up the emitter slot
 

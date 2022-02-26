@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c0609981d6b4fac8b5d158ff022f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anyKeyToAdvance: 0
+  spaceToAdvance: 0
+  returnToAdvance: 1
   nextSceneName: SampleScene
 --- !u!4 &158108082
 Transform:
@@ -385,7 +388,7 @@ MonoBehaviour:
 
 
     Press
-    any key to begin!'
+    Enter to begin!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}

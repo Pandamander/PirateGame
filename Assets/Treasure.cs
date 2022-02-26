@@ -8,6 +8,7 @@ public class Treasure : MonoBehaviour
     public int howMuchMoney = 500;
     public HealthBar healthBar;
     [SerializeField] public EndGame endGame;
+    [SerializeField] AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Treasure : MonoBehaviour
 
     public void PickLock()
     {
-        Debug.Log("Opens" + opensRemaining);
+        // Debug.Log("Opens" + opensRemaining);
         opensRemaining -= 1;
 
         healthBar.gameObject.SetActive(true);
@@ -41,7 +42,7 @@ public class Treasure : MonoBehaviour
     {
         FindObjectOfType<OpenTreasure>().TreasureIsOpened();
         endGame.GetMoney(howMuchMoney);
-
+        audioSource.Play(); // I thnk this doesn't work because the object gets destroyed
         
         Destroy(gameObject);
     }
