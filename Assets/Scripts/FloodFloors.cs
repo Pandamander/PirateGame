@@ -10,6 +10,7 @@ public class FloodFloors : MonoBehaviour
     [SerializeField] public List<GameObject> floorsToFlood;
     [SerializeField] public EndGame endGame;
     [SerializeField] TMP_Text decksRemainingText;
+    [SerializeField] AudioSource audioSource;
 
 
     // Start is called before the first frame update
@@ -57,6 +58,7 @@ public class FloodFloors : MonoBehaviour
     void AnimateFloorFlooding(int whichFloor)
     {
         floorsToFlood[whichFloor].GetComponent<Animator>().SetBool("isFlooded", true);
+        audioSource.Play();
         
     }
 

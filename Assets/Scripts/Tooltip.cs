@@ -19,7 +19,6 @@ public class Tooltip : MonoBehaviour
      // make the tooltip appear and disappears when player is here
         if (collider.gameObject.GetComponent<Player>())
         {
-            Debug.Log("Trigger enter player");
             toolTip.SetActive(true);
         }
     }
@@ -29,7 +28,6 @@ public class Tooltip : MonoBehaviour
         // make the tooltip disappear
         if (collider.gameObject.GetComponent<Player>())
         {
-            Debug.Log("Trigger exit player");
             toolTip.SetActive(false);
         }
     }

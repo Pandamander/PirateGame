@@ -28,29 +28,18 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Fix running
+Make the timer stop if you lose
+Pick up treasure
+No more spawning on flooded floors
+Make the reset button work
+
 
 NEXT UP:
-
-Make the final stage break the floor
-Have a collection of floors
-
-Make it so that the cracks time out, fill the floors, then you lose
-
-
-
-5:22 - scritable object data setup
-
-Add the camera shake again
-
-
-
-P2 IDEAS:
-Get a hammer that lets you repair faster
-Other pirates attacking, shooting cannonballs
-Skeletons
-Big and small leaks
-
-BUG: Jumping animation doesn't work. Maybe make your own movement system?
+Sound FX
+Fix the spawning of the leaks, for some reason they aren't getting rid of the old ones anymore in order. Should be FIFO
+Fix lag if it becomes too much obi's
+Make the ship sink if you lose
+Add escalation: more rain, more rocking, more waves, more tentacles as time goes on
+Random tips
 
  */

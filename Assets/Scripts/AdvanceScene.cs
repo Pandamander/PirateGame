@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class AdvanceScene : MonoBehaviour
 {
+    [SerializeField] bool anyKeyToAdvance = true;
+    [SerializeField] bool spaceToAdvance;
+    [SerializeField] bool returnToAdvance;
 
     [SerializeField] public string nextSceneName;
     // Start is called before the first frame update
@@ -21,9 +24,18 @@ public class AdvanceScene : MonoBehaviour
 
     private void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKey && anyKeyToAdvance)
         {
             NextScene();
         }
+        if (Input.GetKeyDown(KeyCode.Space) && spaceToAdvance)
+        {
+            NextScene();
+        }
+        if (Input.GetKeyDown(KeyCode.Return) && returnToAdvance)
+        {
+            NextScene();
+        }
+
     }
 }
