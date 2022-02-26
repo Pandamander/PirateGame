@@ -22,6 +22,10 @@ public class Leak : MonoBehaviour
 
     private CameraShake cameraShake;
 
+    public GameObject tooltip;
+    public BoxCollider2D tooltipTriggerCollider;
+    private Vector3 tooltipOffset = new Vector3(-.8f, 1.5f, 0);
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -54,7 +58,13 @@ public class Leak : MonoBehaviour
 
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = myObiParticleRenderer;
 
-
+        // instantiate tooltip if a tooltip has been provided
+        if (tooltip != null)
+        {
+            tooltip = Instantiate(tooltip, transform.position + tooltipOffset, Quaternion.identity);
+            //StartCoroutine(Fader.FadeIn(tooltip.GetComponent<SpriteRenderer>(), .3f)); // fade in the tooltip
+            StartCoroutine(tooltip.GetComponent<TooltipLeak>().AnimateScaleAsBounce(.2f, 1.0f, .2f, 1.0f, .5f));
+        }
     }
 
     // Update is called once per frame
@@ -81,7 +91,11 @@ public class Leak : MonoBehaviour
             }
         }
         
-
+        // tooltip positioning
+        if (tooltip != null)
+        {
+            tooltip.transform.position = transform.position + tooltipOffset;
+        }
         
         /*
         // This old code was used when the ship sank based on the leak being present
@@ -148,7 +162,11 @@ public class Leak : MonoBehaviour
 
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = null; // Free up the emitter slot
 
-
+        // get rid of stuff when the leak is patched
+        if (tooltip != null)
+        {
+            Destroy(tooltip);
+        }
         Destroy(gameObject);
     }
 
@@ -166,6 +184,34 @@ public class Leak : MonoBehaviour
         else
         {
             floorThisLeakIsOn = 2;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        // make the tooltip appear and disappears when player is here
+        if (collider.gameObject.GetComponent<Player>())
+        {
+            //Debug.Log("Trigger enter player");
+            if (tooltip != null)
+            {
+                TooltipLeak tooltipComponent = tooltip.GetComponent<TooltipLeak>();
+                tooltipComponent.SetTooltipState(TooltipLeak.TooltipStates.Spacebar);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        // make the tooltip disappear
+        if (collider.gameObject.GetComponent<Player>())
+        {
+            //Debug.Log("Trigger exit player");
+            if (tooltip != null)
+            {
+                TooltipLeak tooltipComponent = tooltip.GetComponent<TooltipLeak>();
+                tooltipComponent.SetTooltipState(TooltipLeak.TooltipStates.Warning);
+            }
         }
     }
 }

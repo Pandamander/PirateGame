@@ -735,6 +735,8 @@ MonoBehaviour:
   obiFluidRenderer: {fileID: 0}
   myObiParticleRenderer: {fileID: 0}
   floorThisLeakIsOn: 0
+  tooltip: {fileID: 1287908233794745210, guid: b4289ac3577e4e14eafdb49c02c2297c, type: 3}
+  tooltipTriggerCollider: {fileID: 8927123229280246847}
 --- !u!61 &8927123229280246847
 BoxCollider2D:
   m_ObjectHideFlags: 0
