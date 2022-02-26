@@ -729,7 +729,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   leakStage: 0
   finalLeakStage: 4
-  stageDuration: 6
+  stageDuration: 3
   stageCounter: 0
   stopCounting: 0
   obiFluidRenderer: {fileID: 0}

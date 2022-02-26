@@ -13,30 +13,36 @@ public class EndGame : MonoBehaviour
     [SerializeField] GameObject endingUI;
     private float secondsSurvived;
     private float finalSecondsSurvived;
-    [SerializeField] Text scoreText;
+    public int moneyCollected;
+    [SerializeField] TMP_Text scoreText;
     [SerializeField] TMP_Text timeText;
+    [SerializeField] TMP_Text moneyText;
 
-    // Start is called before the first frame update
+    // This script handles tracking the score and also the end of the game
+
     void Start()
     {
         endingUI.SetActive(false);
         secondsSurvived = 0f;
+        moneyCollected = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (false)
-        {
-            EndTheGame();
-        }
-        else
+        if (!isGameOver)
         {
             secondsSurvived += Time.deltaTime;
             timeText.text = secondsSurvived.ToString("0.00");
+            moneyText.text = "$" + moneyCollected.ToString("n0");
         }
 
         
+    }
+
+    public void GetMoney(int howMuch)
+    {
+        moneyCollected += howMuch;
     }
 
     public void EndTheGame()
@@ -45,7 +51,11 @@ public class EndGame : MonoBehaviour
         endingUI.SetActive(true);
 
         finalSecondsSurvived = secondsSurvived;
-        scoreText.text = "You survived for: " + finalSecondsSurvived + " seconds";
+
+        int timeScore = (int)(finalSecondsSurvived * 100f);
+        int moneyScore = moneyCollected;
+        int totalScore = timeScore + moneyScore;
+        scoreText.text = "You've gone down with yer ship! \n\n Time Score: " + timeScore + "\nMoney Score: " + moneyScore + "\n\nTotal Score: " + totalScore + "\n\nPress Enter to Play Again";
 
     }
 
