@@ -31,6 +31,10 @@ public class Leak : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // First see if this floor is already flooded, and delete it if so
+        SetFloor();
+        //RemoveLeakIfFlooded();
+
         cameraShake = FindObjectOfType<CameraShake>();
 
         healthBar = GetComponentInChildren<HealthBar>();
@@ -41,7 +45,6 @@ public class Leak : MonoBehaviour
         obiFluidRenderer = GameObject.FindObjectOfType<ObiFluidRenderer>(); // Get the main ObiRendeer on the camera
         myObiParticleRenderer = gameObject.GetComponentInChildren<ObiParticleRenderer>();
 
-        SetFloor();
 
         if (obiFluidRenderer.particleRenderers[0] == null)
         {
@@ -112,14 +115,7 @@ public class Leak : MonoBehaviour
             tooltipSpacebar.transform.position = transform.position + new Vector3(0, 2, 0);
         }
         
-        /*
-        // This old code was used when the ship sank based on the leak being present
-        if (transform.position.y < topOfWater.transform.position.y - waterBuffer) // if the leak is underwater, you can't fix it. So remove it
-        {
-            PatchLeak();
-            Debug.Log("Leak under water! Patching!");
-        }
-        */
+        
 
     }
 
@@ -171,12 +167,18 @@ public class Leak : MonoBehaviour
 
     private void PatchLeak()
     {
-        //FindObjectOfType<LeakSpawner>().RemoveLeak();
+        // Play SFX
+        RemoveLeak();
+    }
+
+    private void RemoveLeak()
+    {
+        FindObjectOfType<FloodFloors>().RemoveSpawnPointsInFloodedArea();
+        // Get rid of the leak if it wasn't a valid leak - no SFX, etc
         GetComponent<SpawnableObject>().RemoveSpawnedObject();
         FindObjectOfType<Repair>().RemoveLeak();
-        Debug.Log("Patched leak!");
-
         obiFluidRenderer.particleRenderers[openObiEmitterSlot] = null; // Free up the emitter slot
+
 
         // get rid of stuff when the leak is patched
         if (tooltipWarning != null)
@@ -204,6 +206,21 @@ public class Leak : MonoBehaviour
         else
         {
             floorThisLeakIsOn = 2;
+        }
+    }
+
+    private bool CheckIfFloorAlreadyFlooded()
+    {
+        // This checks to see if the floor is already flooded
+        return FindObjectOfType<FloodFloors>().areFloorsFlooded[floorThisLeakIsOn];
+    }
+
+    private void RemoveLeakIfFlooded()
+    {
+        if (CheckIfFloorAlreadyFlooded())
+        {
+            Debug.Log("Removed leak on already flooded floor");
+            RemoveLeak();
         }
     }
 

@@ -11,7 +11,7 @@ public class EndGame : MonoBehaviour
     [SerializeField] GameObject topOfWater;
     private bool isGameOver;
     [SerializeField] GameObject endingUI;
-    private float secondsSurvived;
+    public float secondsSurvived;
     private float finalSecondsSurvived;
     public int moneyCollected;
     [SerializeField] TMP_Text scoreText;

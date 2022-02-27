@@ -28,7 +28,7 @@ public class SpawnableObject : MonoBehaviour
     {
         yield return new WaitForSeconds(destroyTime);
 
-        for (int i = 0; i < NSS.spawnPoints.Length; i++)
+        for (int i = 0; i < NSS.spawnPoints.Count; i++)
             {
             if (NSS.spawnPoints[i] == mySpawnPoint)
             {
@@ -40,7 +40,7 @@ public class SpawnableObject : MonoBehaviour
 
     public void RemoveSpawnedObject() // Call this when it's time to kill the object, so that it can be a valid spawn again
     {
-        for (int i = 0; i < NSS.spawnPoints.Length; i++)
+        for (int i = 0; i < NSS.spawnPoints.Count; i++)
         {
             if (NSS.spawnPoints[i] == mySpawnPoint)
             {

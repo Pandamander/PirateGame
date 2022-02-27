@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewSpawnScript : MonoBehaviour
 {
-    public Transform[] spawnPoints;
+    public List<Transform> spawnPoints;
     public float spawnTime = 1.5f;
     public GameObject[] spawnableObjects; // Make sure these objects put here have the SpawnableObjects script added
 
@@ -14,7 +14,7 @@ public class NewSpawnScript : MonoBehaviour
     void Start()
     {
         // fill possible spawn
-        for (int i = 0; i < spawnPoints.Length; i++)
+        for (int i = 0; i < spawnPoints.Count; i++)
         {
             possibleSpawns.Add(spawnPoints[i]);
         }
