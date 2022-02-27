@@ -736,7 +736,7 @@ MonoBehaviour:
   myObiParticleRenderer: {fileID: 0}
   floorThisLeakIsOn: 0
   audioSource: {fileID: 666382720002897373}
-  tooltipWarning: {fileID: 1287908233794745210, guid: b4289ac3577e4e14eafdb49c02c2297c, type: 3}
+  tooltipWarning: {fileID: 0}
   tooltipSpacebar: {fileID: 4130475036907814209, guid: 31fe72c6890ff6943a60ac96bee754af, type: 3}
   tooltipTriggerCollider: {fileID: 8927123229280246847}
 --- !u!61 &8927123229280246847

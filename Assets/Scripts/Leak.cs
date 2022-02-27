@@ -232,8 +232,12 @@ public class Leak : MonoBehaviour
             //Debug.Log("Trigger enter player");
             if (tooltipSpacebar != null)
             {
-                tooltipWarning.SetActive(false);
                 tooltipSpacebar.SetActive(true);
+            }
+
+            if (tooltipWarning != null)
+            {
+                tooltipWarning.SetActive(false);
             }
         }
     }
@@ -246,8 +250,12 @@ public class Leak : MonoBehaviour
             //Debug.Log("Trigger exit player");
             if (tooltipSpacebar != null)
             {
-                tooltipWarning.SetActive(true);
                 tooltipSpacebar.SetActive(false);
+            }
+
+            if (tooltipWarning != null)
+            {
+                tooltipWarning.SetActive(true);
             }
         }
     }
