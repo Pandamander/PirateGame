@@ -6,6 +6,7 @@ public class OpenTreasure : MonoBehaviour
 {
     private bool isOpeningTreasure;
     Collider2D treasureCollider;
+    [SerializeField] AudioSource fixAudioSource;
 
     private void Update()
     {
@@ -19,6 +20,7 @@ public class OpenTreasure : MonoBehaviour
                 if (treasure.IsTreasureOpened() == false)
                 {
                     treasureCollider.GetComponent<Treasure>().PickLock();
+                    fixAudioSource.Play();
                 }
             }
         }

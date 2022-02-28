@@ -6,6 +6,7 @@ public class Repair : MonoBehaviour
 {
     private bool isRepairingLeak;
     Collider2D hole;
+    [SerializeField] AudioSource fixAudioSource;
 
     private void Update()
     {
@@ -15,7 +16,7 @@ public class Repair : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                
+                fixAudioSource.Play();
                 hole.GetComponent<Leak>().RepairLeak();
             }
         }
