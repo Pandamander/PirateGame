@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 1903543029, guid: 785e9c0efea252f47a757bd7cf24aef6, type: 3}
+      propertyPath: treasureOpenedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 960a4543250d879448fadb250b0033ac, type: 3}
     - target: {fileID: 2367639521713442132, guid: 785e9c0efea252f47a757bd7cf24aef6, type: 3}
       propertyPath: m_Name
       value: PRPTreasureLeft

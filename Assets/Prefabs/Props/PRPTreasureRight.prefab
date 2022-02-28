@@ -844,6 +844,7 @@ MonoBehaviour:
   healthBar: {fileID: 1127682722}
   endGame: {fileID: 0}
   audioSource: {fileID: 1764844433226207925}
+  treasureOpenedSprite: {fileID: 21300000, guid: 7654386b78a7df649a1324caae9137f4, type: 3}
   tooltipSpacebar: {fileID: 4130475036907814209, guid: 31fe72c6890ff6943a60ac96bee754af, type: 3}
 --- !u!114 &1903543030
 MonoBehaviour:

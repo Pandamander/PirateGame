@@ -15,8 +15,11 @@ public class OpenTreasure : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
-                treasureCollider.GetComponent<Treasure>().PickLock();
+                Treasure treasure = treasureCollider.GetComponent<Treasure>();
+                if (treasure.IsTreasureOpened() == false)
+                {
+                    treasureCollider.GetComponent<Treasure>().PickLock();
+                }
             }
         }
     }
@@ -36,12 +39,12 @@ public class OpenTreasure : MonoBehaviour
         if (collision.CompareTag("Treasure"))
         {
             isOpeningTreasure = false;
-            treasureCollider = null;
+            //treasureCollider = null;
         }
     }
 
     public void TreasureIsOpened()
     {
-        treasureCollider = null;
+        //treasureCollider = null;
     }
 }

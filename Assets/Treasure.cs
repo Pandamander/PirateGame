@@ -9,9 +9,12 @@ public class Treasure : MonoBehaviour
     public HealthBar healthBar;
     [SerializeField] public EndGame endGame;
     [SerializeField] AudioSource audioSource;
+    public Sprite treasureOpenedSprite;
 
     public GameObject tooltipSpacebar;
-    private Vector3 tooltipOffset = new Vector3(-1.4f, .9f, 0);
+    private Vector3 tooltipOffset = new Vector3(0, 2.0f, 0);
+
+    private bool isTreasureOpened = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +35,10 @@ public class Treasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // tooltip positioning
-        tooltipSpacebar.transform.position = transform.position + tooltipOffset;
+        if (isTreasureOpened == false)
+        {
+            tooltipSpacebar.transform.position = transform.position + tooltipOffset; // tooltip positioning
+        }
     }
 
     public void PickLock()
@@ -47,6 +52,11 @@ public class Treasure : MonoBehaviour
         if (opensRemaining <= 0)
         {
             OpenTreasure();
+            isTreasureOpened = true;
+            if (tooltipSpacebar != null)
+            {
+                tooltipSpacebar.SetActive(false);
+            }
         }
     }
 
@@ -55,14 +65,23 @@ public class Treasure : MonoBehaviour
         FindObjectOfType<OpenTreasure>().TreasureIsOpened();
         endGame.GetMoney(howMuchMoney);
         audioSource.Play(); // I thnk this doesn't work because the object gets destroyed
+
+        // open the chest
+        if (treasureOpenedSprite != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = treasureOpenedSprite;
+        }
+
+        // disable the health bar
+        healthBar.gameObject.SetActive(false);
         
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         // make the tooltip appear and disappears when player is here
-        if (collider.gameObject.GetComponent<Player>())
+        if (collider.gameObject.GetComponent<Player>() && isTreasureOpened == false)
         {
             //Debug.Log("Trigger enter player");
             if (tooltipSpacebar != null)
@@ -75,7 +94,7 @@ public class Treasure : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collider)
     {
         // make the tooltip disappear
-        if (collider.gameObject.GetComponent<Player>())
+        if (collider.gameObject.GetComponent<Player>() && isTreasureOpened == false)
         {
             //Debug.Log("Trigger exit player");
             if (tooltipSpacebar != null)
@@ -83,5 +102,10 @@ public class Treasure : MonoBehaviour
                 tooltipSpacebar.SetActive(false);
             }
         }
+    }
+
+    public bool IsTreasureOpened()
+    {
+        return isTreasureOpened;
     }
 }
