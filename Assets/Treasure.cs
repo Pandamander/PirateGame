@@ -16,6 +16,8 @@ public class Treasure : MonoBehaviour
 
     private bool isTreasureOpened = false;
 
+    public GameObject treasureToSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,13 @@ public class Treasure : MonoBehaviour
         if (treasureOpenedSprite != null)
         {
             GetComponent<SpriteRenderer>().sprite = treasureOpenedSprite;
+        }
+        
+        // spawn the treasure contained in the chest
+        if (treasureToSpawn != null)
+        {
+            treasureToSpawn = Instantiate(treasureToSpawn, transform.position + new Vector3(0, .8f, 0), Quaternion.identity);
+            treasureToSpawn.transform.parent = this.transform;
         }
 
         // disable the health bar

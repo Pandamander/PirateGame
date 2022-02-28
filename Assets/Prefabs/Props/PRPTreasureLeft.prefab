@@ -32,6 +32,10 @@ PrefabInstance:
       value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1903543029, guid: 785e9c0efea252f47a757bd7cf24aef6, type: 3}
+      propertyPath: treasureToSpawn
+      value: 
+      objectReference: {fileID: 724574185822230256, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
+    - target: {fileID: 1903543029, guid: 785e9c0efea252f47a757bd7cf24aef6, type: 3}
       propertyPath: treasureOpenedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 960a4543250d879448fadb250b0033ac, type: 3}

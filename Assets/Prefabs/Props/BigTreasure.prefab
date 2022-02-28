@@ -176,6 +176,7 @@ MonoBehaviour:
   audioSource: {fileID: 2785311202225802543}
   treasureOpenedSprite: {fileID: 21300000, guid: 388515b4656277b45ac44f0e3bb7e5be, type: 3}
   tooltipSpacebar: {fileID: 4130475036907814209, guid: 31fe72c6890ff6943a60ac96bee754af, type: 3}
+  treasureToSpawn: {fileID: 724574185822230256, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
 --- !u!114 &4529096678621715820
 MonoBehaviour:
   m_ObjectHideFlags: 0
