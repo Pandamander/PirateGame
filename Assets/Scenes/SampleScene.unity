@@ -6009,7 +6009,7 @@ Tilemap:
       - {fileID: 21300000, guid: f9b921d9daa30634e9a8ef334a2dddd8, type: 3}
       - {fileID: 21300000, guid: 0cab4c34a50b8f24ea8c1f6316e29610, type: 3}
       - {fileID: 21300000, guid: 01b681eb038f0d741bc0d69ea9ea0220, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -20, y: 5, z: 0}
@@ -6234,7 +6234,7 @@ Tilemap:
       - {fileID: 21300000, guid: 77ba1474e936f134590072234c567a0b, type: 3}
       - {fileID: 21300000, guid: 6197579f81498824389e15c942764ca2, type: 3}
       - {fileID: 21300000, guid: 7ebd1d8402de33a4da9c4220f202622c, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 17, y: 10, z: 0}
@@ -8599,63 +8599,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17263afa0d0cafb478803583ff456288, type: 3}
---- !u!1001 &1003173866
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 724574185822230256, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_Name
-      value: TreasureDiamond
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -41.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -24.505592
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 724574185822230261, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0dcb4cacbc471d241ad7346556912902, type: 3}
 --- !u!1001 &1013632715
 PrefabInstance:
   m_ObjectHideFlags: 0
