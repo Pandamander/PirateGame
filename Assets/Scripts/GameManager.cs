@@ -13,7 +13,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // LeadSpawner sinks the ship
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // quit the game
+            Application.Quit();
+        }
         
     }
 

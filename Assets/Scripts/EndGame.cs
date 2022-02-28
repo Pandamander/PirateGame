@@ -16,6 +16,9 @@ public class EndGame : MonoBehaviour
     [SerializeField] TMP_Text timeText;
     [SerializeField] TMP_Text moneyText;
 
+    private Treasure[] treasureList;
+    private bool isAllTreasureCollected = false;
+
     // This script handles tracking the score and also the end of the game
 
     void Start()
@@ -23,6 +26,9 @@ public class EndGame : MonoBehaviour
         endingUI.SetActive(false);
         secondsSurvived = 0f;
         moneyCollected = 0;
+
+        treasureList = FindObjectsOfType<Treasure>();
+        print("there are " + treasureList.Length + "treasures to find");
     }
 
     // Update is called once per frame
@@ -35,7 +41,23 @@ public class EndGame : MonoBehaviour
             moneyText.text = "$" + moneyCollected.ToString("n0") + " recovered";
         }
 
-        
+        foreach (Treasure treasure in treasureList)
+        {
+            isAllTreasureCollected = true;
+            if(treasure.IsTreasureOpened() == false)
+            {
+                isAllTreasureCollected = false;
+                break;
+            }
+        }
+
+        // if all treasure has been collected then end the game
+        if (isAllTreasureCollected && isGameOver == false)
+        {
+            EndTheGame();
+        }
+
+
     }
 
     public void GetMoney(int howMuch)
@@ -47,6 +69,9 @@ public class EndGame : MonoBehaviour
     {
         isGameOver = true;
         endingUI.SetActive(true);
+
+        //disable leak spawning
+        GameObject.Find("LeakSpawner").GetComponent<NewSpawnScript>().DisableSpawning();
 
         finalSecondsSurvived = secondsSurvived;
 

@@ -44,4 +44,9 @@ public class NewSpawnScript : MonoBehaviour
 
          }
     }
+
+    public void DisableSpawning()
+    {
+        CancelInvoke();
+    }
 }
