@@ -745,7 +745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -136, y: 116}
+  m_AnchoredPosition: {x: -119, y: 116}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141611645
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Feb 2022, Pandamander & c00paloops
+  m_text: (c) Feb 2022, Pandamander & c00paloops
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
@@ -1401,8 +1401,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288264959
-  m_fontColor: {r: 1, g: 0.7289625, b: 0.5990566, a: 1}
+    rgba: 4283008255
+  m_fontColor: {r: 1, g: 0.51817423, b: 0.28773582, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

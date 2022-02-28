@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &158108081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd0be40f06294119907508857ecf3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySpeed: 0.07
+  delaySpeed: 0.04
   fullText: The year is 1690.     Captain Jules was on his final voyage to close
     out a lucrative 40 year career as pirate on the high seas.       He longed to
     return home to spend his final years at peace with his daughter and grandchild.      
