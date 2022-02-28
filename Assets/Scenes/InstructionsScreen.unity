@@ -453,13 +453,17 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Arrow keys to move
 
+
     Run to leaks and press SPACE to repair before
     they flood!
 
-    Survive as long as possible!
+
+    Press SPACE to collect as much treasure as you can!
 
 
-    Press Enter to begin!'
+
+    Press
+    Enter to begin!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
@@ -486,8 +490,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
-  m_fontSizeBase: 17
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -522,7 +526,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -198.50519, y: -125.70584, z: -371.30536, w: -162.67819}
+  m_margin: {x: -198.50519, y: -125.70584, z: -343.6067, w: -162.67819}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -672,7 +676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.599}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -36, y: -101}
+  m_AnchoredPosition: {x: -68, y: -79}
   m_SizeDelta: {x: 836.366, y: 184.6159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2069842952

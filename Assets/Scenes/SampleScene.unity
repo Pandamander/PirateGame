@@ -6243,7 +6243,7 @@ Tilemap:
       - {fileID: 21300000, guid: 727035b2774e46d40bb5b221f490d639, type: 3}
       - {fileID: 21300000, guid: 56700015ee122cb4fb9e4a5a0ab5a171, type: 3}
       - {fileID: 21300000, guid: 358cd5c2fe5b70d45a20e6ed753dea0f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 19, y: 10, z: 0}
@@ -6474,6 +6474,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5382614499495037390, guid: 353bde76275552a44af11c2fc85e2799, type: 3}
   m_PrefabInstance: {fileID: 830754745}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &413087136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413087137}
+  - component: {fileID: 413087139}
+  - component: {fileID: 413087138}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &413087137
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413087136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1097447563}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -560.00134, y: 119.25014}
+  m_SizeDelta: {x: 834.9309, y: 479.131}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &413087138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413087136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4b06f78f46788e34da1d9677277defc4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &413087139
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413087136}
+  m_CullTransparentMesh: 1
 --- !u!4 &434335242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2347702912661273020, guid: 17263afa0d0cafb478803583ff456288, type: 3}
@@ -15047,6 +15122,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 413087137}
   - {fileID: 1457215854}
   m_Father: {fileID: 36483149}
   m_RootOrder: 0
@@ -16677,7 +16753,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1097447563}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16704,19 +16780,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You''ve gone down with yer ship!
+  m_text: 'Got a lot o'' treasure! A fine retirement...but still some left. Can ya
+    get it all?
 
 
-    Time Score: 7200
 
-    Money Score:
-    1500
+    Treasure Collected: $6,200
 
 
-    Total Score: 8,700
 
-
-    Press Enter to Play Again'
+    Press Enter to Play again!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
@@ -16779,7 +16852,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -402.33673, y: 0, z: -438.14673, w: 0}
+  m_margin: {x: -251.97232, y: 0, z: -283.82532, w: -233.46054}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18449,8 +18522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d387945c99a24b54a869ca9bcdbfbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topOfship: {fileID: 0}
-  topOfWater: {fileID: 0}
   endingUI: {fileID: 1097447562}
   secondsSurvived: 0
   moneyCollected: 0
@@ -19551,7 +19622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -727, y: 346}
+  m_AnchoredPosition: {x: -1578, y: 346}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1903444652

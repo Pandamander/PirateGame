@@ -373,7 +373,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -413.58276, y: 74.79291, z: -606.39233, w: -162.67819}
+  m_margin: {x: -27.109924, y: 147.25656, z: -214.34525, w: -149.67189}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -613,7 +613,8 @@ MonoBehaviour:
     out a lucrative 40 year career as pirate on the high seas.       He longed to
     return home to spend his final years at peace with his daughter and grandchild.      
     "Mates, this be the last one for me," he said with a grin as he sipped his rum.      
-    Little did he know how right he would be...
+    Little did he know how right he would be...     Will he be able to recover all
+    his treasure before the ship goes down?
   textCompleted: 0
 --- !u!1 &1187183948
 GameObject:

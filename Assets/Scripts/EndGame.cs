@@ -7,8 +7,6 @@ using System;
 
 public class EndGame : MonoBehaviour
 {
-    [SerializeField] GameObject topOfship;
-    [SerializeField] GameObject topOfWater;
     private bool isGameOver;
     [SerializeField] GameObject endingUI;
     public float secondsSurvived;
@@ -34,7 +32,7 @@ public class EndGame : MonoBehaviour
         {
             secondsSurvived += Time.deltaTime;
             timeText.text = secondsSurvived.ToString("0.00");
-            moneyText.text = "$" + moneyCollected.ToString("n0");
+            moneyText.text = "$" + moneyCollected.ToString("n0") + " recovered";
         }
 
         
@@ -55,7 +53,25 @@ public class EndGame : MonoBehaviour
         int timeScore = (int)(finalSecondsSurvived * 100f);
         int moneyScore = moneyCollected;
         int totalScore = timeScore + moneyScore;
-        scoreText.text = "You've gone down with yer ship! \n\n Time Score: " + timeScore + "\nMoney Score: " + moneyScore + "\n\nTotal Score: " + totalScore + "\n\nPress Enter to Play Again";
+
+        string endingResult = "ending";
+        if (moneyCollected < 1)
+        {
+            endingResult = "No treasure recovered...so much for retirement!";
+        } else if (moneyCollected < 3000)
+        {
+            endingResult = "Grabbed a bit o' treasure...could ya get more?";
+        } else if (moneyCollected < 6600)
+        {
+            endingResult = "Got a lot o' treasure! A fine retirement...but still some left. Can ya get it all?";
+        } else
+        {
+            endingResult = "YOU WIN!! All treasure recovered!! Time to retire with ya family in peace!!";
+        }
+
+        scoreText.text = endingResult + "\n\nTreasure Recovered: $" + moneyCollected + "\n\nPress Enter to play again!";
+
+        //scoreText.text = "You've gone down with yer ship! \n\n Time Score: " + timeScore + "\nMoney Score: " + moneyScore + "\n\nTotal Score: " + totalScore + "\n\nPress Enter to Play Again";
 
     }
 
