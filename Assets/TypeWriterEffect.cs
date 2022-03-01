@@ -38,7 +38,7 @@ public class TypeWriterEffect : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) && textCompleted) // Custom code to advance scene
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("InstructionsScreen");
 
         }
 
